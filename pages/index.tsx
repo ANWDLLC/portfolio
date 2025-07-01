@@ -32,4 +32,12 @@ export default function Home() {
           </p>
           <Link
             href="/projects_page_matt_solon"
-            class
+            className="bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition"
+          >
+            View My Work
+          </Link>
+        </section>
+      </main>
+    </>
+  );
+}
