@@ -5,7 +5,7 @@ export default function Header() {
   const { pathname } = useRouter();
 
   const linkClass = (href: string) =>
-    \`px-3 py-2 rounded-md transition hover:bg-zinc-800 \${pathname === href ? 'bg-zinc-800 text-white' : 'text-gray-300'}\`;
+    `px-3 py-2 rounded-md transition hover:bg-zinc-800 ${pathname === href ? 'bg-zinc-800 text-white' : 'text-gray-300'}`;
 
   return (
     <header className="bg-black/90 backdrop-blur border-b border-zinc-800 sticky top-0 z-50">
