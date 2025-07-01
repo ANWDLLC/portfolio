@@ -1,6 +1,3 @@
-// components/ProjectCard.tsx
-import React from 'react';
-
 interface ProjectProps {
   title: string;
   type: 'YouTube' | 'Podcast';
