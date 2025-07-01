@@ -11,13 +11,13 @@ const projects = [
   },
   {
     title: 'Podcast: Turn Ons and Turn Offs',
-    type: type: 'Podcast' as const
+    type: 'Podcast' as const
 ,
     embedUrl: 'https://embed.podcasts.apple.com/ca/podcast/turn-on-and-turn-offs/id1534943179?i=1000548908559',
   },
   {
     title: 'Podcast: With Keanu Thompson',
-    type: type: 'Podcast' as const
+    type: 'Podcast' as const
 ,
     embedUrl: 'https://embed.podcasts.apple.com/us/podcast/with-keanu-thompson/id1110253182?i=1000630346859',
   },
@@ -29,43 +29,43 @@ const projects = [
   },
   {
     title: 'YouTube: Interview Editing Breakdown',
-    type: type: 'YouTube' as const
+    type:  'YouTube' as const
 ,
     embedUrl: 'https://www.youtube.com/embed/fJ63waAx39w',
   },
   {
     title: 'YouTube: Audio Repair Techniques',
-    type: type: 'YouTube' as const
+    type:  'YouTube' as const
 ,
     embedUrl: 'https://www.youtube.com/embed/_voaPEGP6bg',
   },
   {
     title: 'YouTube: Visual Storytelling with Sound',
-    type: type: 'YouTube' as const
+    type:  'YouTube' as const
 ,
     embedUrl: 'https://www.youtube.com/embed/FKx9AQQOwYg',
   },
   {
     title: 'YouTube: Trailer Breakdown',
-    type: type: 'YouTube' as const
+    type:  'YouTube' as const
 ,
     embedUrl: 'https://www.youtube.com/embed/2_k65PC2Wjk',
   },
   {
     title: 'YouTube: Sound Design Reel',
-    type: type: 'YouTube' as const
+    type:  'YouTube' as const
 ,
     embedUrl: 'https://www.youtube.com/embed/I54PaSXj-BU',
   },
   {
     title: 'YouTube: Video Podcast Editing',
-    type: type: 'YouTube' as const
+    type:  'YouTube' as const
 ,
     embedUrl: 'https://www.youtube.com/embed/GgP325oAzTA',
   },
   {
     title: 'YouTube: Behind the Scenes – Voiceover Work',
-    type: type: 'YouTube' as const
+    type: 'YouTube' as const
 ,
     embedUrl: 'https://www.youtube.com/embed/0hCykGJXAgE',
   },
