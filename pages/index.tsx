@@ -32,4 +32,4 @@ export default function Home() {
           </p>
           <Link
             href="/projects_page_matt_solon"
-            className="bg-white text-black px-6 py-3 rounded-xl font-semibold ho
+            class
