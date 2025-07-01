@@ -5,7 +5,7 @@ import ProjectCard from '../components/ProjectCard';
 const projects = [
   {
     title: 'Podcast: Katherine Kendall – Surviving Harvey Weinstein',
-    type: type: 'Podcast' as const
+    type:  'Podcast' as const
 ,
     embedUrl: 'https://embed.podcasts.apple.com/us/podcast/katherine-kendall-surviving-harvey-weinstein/id1536041978?i=1000501136521',
   },
