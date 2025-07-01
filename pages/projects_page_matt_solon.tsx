@@ -1,5 +1,6 @@
 export default function ProjectsPage() {
   return (
+  <>
     <Header />
   <main className="min-h-screen bg-black text-white p-6">
       <h1 className="text-4xl font-bold mb-8 text-center">Projects</h1>
@@ -17,5 +18,6 @@ export default function ProjectsPage() {
         <iframe className="w-full h-32 rounded-lg" src="https://embed.podcasts.apple.com/us/podcast/with-keanu-thompson/id1110253182?i=1000630346859" allow="autoplay *; encrypted-media *;"></iframe>
       </div>
     </main>
+  </>
   );
 }

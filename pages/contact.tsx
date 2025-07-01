@@ -1,5 +1,6 @@
 export default function ContactPage() {
   return (
+  <>
     <Header />
   <main className="min-h-screen bg-black text-white p-6 max-w-xl mx-auto">
       <h1 className="text-4xl font-bold mb-6 text-center">Contact Me</h1>
@@ -10,5 +11,6 @@ export default function ContactPage() {
         <button type="submit" className="bg-white text-black py-3 rounded-lg font-semibold hover:bg-gray-200">Send Message</button>
       </form>
     </main>
+  </>
   );
 }

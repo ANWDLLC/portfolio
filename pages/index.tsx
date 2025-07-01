@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
+  <>
     <>
       <Head>
         <title>Matt Solon | Audio Video Editor</title>
@@ -16,6 +17,7 @@ export default function Home() {
           View My Work
         </Link>
       </main>
+  </>
     </>
   );
 }

@@ -1,5 +1,6 @@
 export default function AboutPage() {
   return (
+  <>
     <Header />
   <main className="min-h-screen bg-black text-white p-6 max-w-3xl mx-auto">
       <h1 className="text-4xl font-bold mb-6 text-center">About Matt Solon</h1>
@@ -9,5 +10,6 @@ export default function AboutPage() {
         rhythm, and polish to every project.
       </p>
     </main>
+  </>
   );
 }
