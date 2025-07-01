@@ -1,6 +1,7 @@
 
 import Head from 'next/head';
-import ProjectCard from '../components/ProjectCard';
+import VideoCard from '../ComponentCards/VideoCard';
+
 
 const projects = [
   {
@@ -25,7 +26,7 @@ export default function Projects() {
         <h1 className="text-3xl md:text-5xl font-bold mb-8 text-center">Projects</h1>
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+            <VideoCard key={index} {...project} />
           ))}
         </div>
       </main>
