@@ -1,4 +1,4 @@
-// pages/contact.tsx
+
 import Head from 'next/head';
 import { useState } from 'react';
 
@@ -19,11 +19,7 @@ export default function Contact() {
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
-      body: JSON.stringify({
-        name: form.name,
-        email: form.email,
-        message: form.message,
-      }),
+      body: JSON.stringify(form),
     });
 
     if (response.ok) {
@@ -38,8 +34,6 @@ export default function Contact() {
     <>
       <Head>
         <title>Contact | Matt Solon</title>
-        <meta name="description" content="Contact Matt Solon for your audio and video editing needs." />
-        <meta property="og:url" content="https://anwdllc.com/contact" />
       </Head>
       <main className="min-h-screen bg-black text-white px-6 py-12">
         <div className="max-w-xl mx-auto">
