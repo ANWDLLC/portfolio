@@ -1,6 +1,7 @@
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-black text-white p-6">
+    <Header />
+  <main className="min-h-screen bg-black text-white p-6">
       <h1 className="text-4xl font-bold mb-8 text-center">Projects</h1>
       <div className="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto">
         <iframe className="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/yoZfiLnmvHA" allowFullScreen></iframe>
