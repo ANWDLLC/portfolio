@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matt Solon - Audio/Video Editor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+
+    <!-- Header & Navigation -->
+    <header class="bg-black/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold text-white">MS</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#work" class="text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Work</a>
+                        <a href="#about" class="text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#contact" class="text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" id="menu-open-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <svg class="h-6 w-6 hidden" id="menu-close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#work" class="text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Work</a>
+                <a href="#about" class="text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#contact" class="text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="pt-24 md:pt-32 lg:pt-40">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white leading-tight">Crafting Stories with Sound & Vision</h1>
+                <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-300">I'm Matt Solon, a passionate audio and video editor dedicated to bringing your creative vision to life. From dynamic gaming content and engaging YouTube videos to polished podcasts and cinematic shorts, I deliver professional results that captivate audiences.</p>
+                <div class="mt-8 flex justify-center gap-4">
+                    <a href="#work" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">View My Work</a>
+                    <a href="#contact" class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">Get In Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section id="work" class="py-20 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">My Portfolio</h2>
+                
+                <!-- Tier 1: Featured Projects -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <!-- Project 1 (Larger) -->
+                    <div class="bg-gray-900 rounded-lg overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://i.ytimg.com/vi/6axirYpHqqQ/maxresdefault.jpg" alt="Project 1 Thumbnail" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300" onerror="this.onerror=null;this.src='https://placehold.co/800x400/111827/ffffff?text=Image+Not+Found';">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <button class="text-white text-lg font-bold" onclick="openModal('project1')">View Project</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 (Larger) -->
+                    <div class="bg-gray-900 rounded-lg overflow-hidden group">
+                        <div class="relative">
+                            <img src="https://i.ytimg.com/vi/fJ63waAx39w/maxresdefault.jpg" alt="Project 2 Thumbnail" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300" onerror="this.onerror=null;this.src='https://placehold.co/800x400/111827/ffffff?text=Image+Not+Found';">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <button class="text-white text-lg font-bold" onclick="openModal('project2')">View Project</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tier 2: Secondary Projects -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                    <script>
+                        for (let i = 3; i <= 8; i++) {
+                            let imageUrl = `https://placehold.co/600x400/111827/ffffff?text=Project+${i}`;
+                            if (i === 3) {
+                                imageUrl = 'https://i.ytimg.com/vi/_voaPEGP6bg/maxresdefault.jpg';
+                            } else if (i === 4) {
+                                imageUrl = 'https://i.ytimg.com/vi/FKx9AQQOwYg/maxresdefault.jpg';
+                            } else if (i === 5) {
+                                imageUrl = 'https://i.ytimg.com/vi/AnqHQwdM0LM/maxresdefault.jpg';
+                            } else if (i === 6) {
+                                imageUrl = 'https://i.ytimg.com/vi/2_k65PC2Wjk/maxresdefault.jpg';
+                            } else if (i === 7) {
+                                imageUrl = 'https://i.ytimg.com/vi/0hCykGJXAgE/maxresdefault.jpg';
+                            } else if (i === 8) {
+                                imageUrl = 'https://i.ytimg.com/vi/i9M-cpwwiIU/maxresdefault.jpg';
+                            }
+                            document.write(`
+                                <div class="bg-gray-900 rounded-lg overflow-hidden group">
+                                    <div class="relative">
+                                        <img src="${imageUrl}" alt="Project ${i} Thumbnail" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300" onerror="this.onerror=null;this.src='https://placehold.co/600x400/111827/ffffff?text=Image+Not+Found';">
+                                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                            <button class="text-white text-lg font-bold" onclick="openModal('project${i}')">View Project</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            `);
+                        }
+                    </script>
+                </div>
+
+                <!-- Tier 3: Other Projects -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                     <script>
+                        for (let i = 9; i <= 11; i++) {
+                            let imageUrl = `https://placehold.co/600x400/111827/ffffff?text=Project+${i}`;
+                            if (i === 9) {
+                                imageUrl = 'https://i.ytimg.com/vi/PLwgwaQpTEY/maxresdefault.jpg';
+                            } else if (i === 10) {
+                                imageUrl = 'https://i.ytimg.com/vi/I54PaSXj-BU/maxresdefault.jpg';
+                            } else if (i === 11) {
+                                imageUrl = 'https://i.ytimg.com/vi/qveJvRnRZl8/maxresdefault.jpg';
+                            }
+                            document.write(`
+                                <div class="bg-gray-900 rounded-lg overflow-hidden group">
+                                    <div class="relative">
+                                        <img src="${imageUrl}" alt="Project ${i} Thumbnail" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300" onerror="this.onerror=null;this.src='https://placehold.co/600x400/111827/ffffff?text=Image+Not+Found';">
+                                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                            <button class="text-white text-lg font-bold" onclick="openModal('project${i}')">View Project</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            `);
+                        }
+                    </script>
+                </div>
+
+                <!-- Tier 4: Final Projects (Podcast & Music Embeds) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-900 rounded-lg overflow-hidden">
+                        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/chase-crossno/id1498679410?i=1000564868347"></iframe>
+                    </div>
+                    <div class="bg-gray-900 rounded-lg overflow-hidden">
+                        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/katherine-kendall-surviving-harvey-weinstein/id1536041978?i=1000501136521"></iframe>
+                    </div>
+                    <div class="bg-gray-900 rounded-lg overflow-hidden">
+                        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/with-cherie-deville/id1110253182?i=1000702093011"></iframe>
+                    </div>
+                    <div class="bg-gray-900 rounded-lg overflow-hidden">
+                        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/ca/podcast/what-is-your-why-and-how-can-you-make-your-dreams-a-reality/id1534943179?i=1000657053043"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="bg-gray-900 py-20 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl sm:text-4xl font-bold mb-4">About Me</h2>
+                        <p class="text-gray-300 mb-4">With nearly 10 years of experience in post-production, I specialize in crafting content that stands out in the digital space. My focus is on editing dynamic gaming videos, producing engaging YouTube content, and mastering audio for professional podcasts. I'm passionate about taking raw ideas and transforming them into compelling stories that capture and hold an audience's attention.</p>
+                        <p class="text-gray-300">I have a deep understanding of what makes digital content successful, from fast-paced gaming montages to polished podcast episodes that require pristine audio. My technical toolkit includes the full Adobe Creative Suite and the Reaper DAW, allowing me to deliver high-quality, professional results efficiently.</p>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/500x500/1f2937/ffffff?text=Your+Photo" alt="Matt Solon" class="rounded-lg shadow-2xl mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/500x500/1f2937/ffffff?text=Image+Not+Found';">
+                    </div>
+                </div>
+            </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-xl mx-auto text-center">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-4">Let's Create Together</h2>
+                    <p class="text-gray-300 mb-8">Have a project in mind? I'd love to hear about it. Send me a message, and I'll get back to you as soon as possible.</p>
+                </div>
+                <form action="https://formspree.io/f/xwpbywza" method="POST" class="max-w-xl mx-auto">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300">Name</label>
+                            <input type="text" name="name" id="name" required class="mt-1 block w-full bg-gray-900 border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
+                            <input type="email" name="email" id="email" required class="mt-1 block w-full bg-gray-900 border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <label for="message" class="block text-sm font-medium text-gray-300">Message</label>
+                        <textarea id="message" name="message" rows="4" required class="mt-1 block w-full bg-gray-900 border-gray-700 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg transition-colors">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-gray-400">
+            <p>&copy; 2024 Matt Solon. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal Structure -->
+    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="bg-gray-900 rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-3xl sm:w-full m-4">
+            <div class="relative">
+                <button onclick="closeModal()" class="absolute top-3 right-3 text-white hover:text-gray-300 z-10">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+                <div id="modal-content" class="p-4 sm:p-6">
+                    <!-- Dynamic content will be injected here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOpenIcon = document.getElementById('menu-open-icon');
+        const menuCloseIcon = document.getElementById('menu-close-icon');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuOpenIcon.classList.toggle('hidden');
+            menuCloseIcon.classList.toggle('hidden');
+        });
+
+        // Modal logic
+        const modal = document.getElementById('project-modal');
+        const modalContent = document.getElementById('modal-content');
+
+        // Generate project data dynamically
+        const projectData = {};
+        const exampleVideoLinks = [
+            'https://www.youtube.com/embed/6axirYpHqqQ',
+            'https://www.youtube.com/embed/fJ63waAx39w',
+            'https://www.youtube.com/embed/_voaPEGP6bg',
+            'https://www.youtube.com/embed/FKx9AQQOwYg',
+            'https://www.youtube.com/embed/AnqHQwdM0LM',
+            'https://www.youtube.com/embed/2_k65PC2Wjk',
+            'https://www.youtube.com/embed/0hCykGJXAgE',
+            'https://www.youtube.com/embed/i9M-cpwwiIU',
+            'https://www.youtube.com/embed/PLwgwaQpTEY',
+            'https://www.youtube.com/embed/I54PaSXj-BU',
+            'https://www.youtube.com/embed/qveJvRnRZl8'
+        ];
+
+        for (let i = 1; i <= 11; i++) { // Only generate data for projects that use the modal
+            projectData[`project${i}`] = {
+                title: `Project Title ${i}`,
+                videoSrc: exampleVideoLinks[i - 1]
+            };
+        }
+        
+        // Add specific data for the first 3 projects if needed
+        projectData.project1.title = 'And Now We Drink Podcast - Evelyn Claire is an armpit legend';
+        projectData.project2.title = 'Functioning on Zero: Robert Dean Live From The Lost Well';
+        projectData.project3.title = 'Twin Talk Podcast - Ep. 6: Overtime Megan';
+        projectData.project4.title = 'The Dhar and Jay Show - Rebecca Zamolo intro';
+        projectData.project5.title = 'Sauna Sessions Podcast - Toxic Chemicals Lurking in Our Homes with Warren Phillips';
+        projectData.project6.title = 'Almost Adulting Podcast - Laura Clery';
+        projectData.project7.title = 'Not Alone Podcast - Bridging the Gap: Age Differences and Marital Challenges with Gary Lipovetsky';
+        projectData.project8.title = 'You Laugh We Die - Is Among Us Dead? (Goose Goose Duck is SUS)';
+        projectData.project9.title = 'Eat Play Crush Podcast - Tim Ferriss: Defining Legacy, Gratitude, and The Price of Power';
+        projectData.project10.title = 'The Dhar and Jay Show - COBRA KAI\'S Peyton List SPILLS THE TEA!';
+        projectData.project11.title = 'You Laugh We Die - Monday Nitefort: Dancing at the gunfight';
+
+
+        function openModal(projectId) {
+            const project = projectData[projectId];
+            if (!project) return;
+
+            modalContent.innerHTML = `
+                <h2 class="text-2xl font-bold mb-4">${project.title}</h2>
+                <div class="video-container rounded-lg mb-4">
+                    <iframe src="${project.videoSrc}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            `;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modalContent.innerHTML = ''; // Clear content
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on escape key press
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        // Close modal on outside click
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
